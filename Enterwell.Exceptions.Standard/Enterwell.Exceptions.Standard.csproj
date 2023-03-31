@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Enterwell.Exceptions</RootNamespace>
+    <RepositoryUrl>https://dev.azure.com/enterwell</RepositoryUrl>
+    <PackageProjectUrl>https://enterwell.net</PackageProjectUrl>
+    <Authors>Enterwell d.o.o.</Authors>
+    <Company>Enterwell d.o.o.</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+</Project>
