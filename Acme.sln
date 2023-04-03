@@ -16,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Core", "Acme.Core\Acme
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Application", "Acme.Application\Acme.Application.csproj", "{0F69DA6E-D544-4243-9B83-0F1E2E3E51DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Infrastructure.EF.SqlServer", "Acme.Infrastructure.EF.SQLServer\Acme.Infrastructure.EF.SqlServer.csproj", "{077F886B-22F4-40F5-9F29-8A512EBCD6FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Infrastructure.EF.PostgreSql", "Acme.Infrastructure.EF.PostgreSql\Acme.Infrastructure.EF.PostgreSql.csproj", "{077F886B-22F4-40F5-9F29-8A512EBCD6FA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B1D7EBD8-A521-4234-875D-F9C6A1E1ED01}"
 EndProject
@@ -24,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Tests", "Acme.Tests\Ac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Application.Tests", "Acme.Application.Tests\Acme.Application.Tests.csproj", "{B64B8A99-F328-4CA6-B3B7-081AAC489BB8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Infrastructure.EF.SqlServer.Tests", "Acme.Infrastructure.EF.SqlServer.Tests\Acme.Infrastructure.EF.SqlServer.Tests.csproj", "{EC69EDBF-5DB0-4EB4-98AE-DEB34B1ED939}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Infrastructure.EF.PostgreSql.Tests", "Acme.Infrastructure.EF.PostgreSql.Tests\Acme.Infrastructure.EF.PostgreSql.Tests.csproj", "{EC69EDBF-5DB0-4EB4-98AE-DEB34B1ED939}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enterwell.Exceptions.Standard", "Enterwell.Exceptions.Standard\Enterwell.Exceptions.Standard.csproj", "{79C46543-2F44-4B12-AFA2-A03672F6C7BA}"
 EndProject

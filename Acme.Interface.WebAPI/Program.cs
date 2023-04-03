@@ -1,25 +1,56 @@
+using Acme.Application.Configuration;
+using Acme.Infrastructure.EF.PostgreSql.Configuration;
+using Acme.Interface.WebAPI.Configuration;
+using Acme.Interface.WebAPI.Configuration.ServiceExtensions;
+using Enterwell.Exceptions.Web;
+using Serilog;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Environment information
+var isDevelopment = builder.Environment.IsDevelopment();
+var isProduction = builder.Environment.IsProduction();
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Configure Serilog
+var serilogLogger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
+builder.Host.UseSerilog(serilogLogger);
+
+// Add services to the DI container.
+builder.Services
+    .AddCustomConfiguration(builder.Configuration)
+    .AddAutoMapper(config =>
+        {
+            config.ShouldUseConstructor = (_ => true);
+        },
+        typeof(ApiMapperProfile).Assembly,
+        typeof(ApplicationMapperProfile).Assembly,
+        typeof(EfPostgreSqlMapperProfile).Assembly
+    )
+    .AddCustomSwagger()
+    .AddApiServices()
+    .AddApplicationServices()
+    .AddEfPostgreSqlInfrastructure(builder.Configuration)
+    .AddCustomCors()
+    .AddCustomAuth(builder.Configuration)
+    .AddCustomControllers();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (isDevelopment)
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 }
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
+app
+    .UseSerilogRequestLogging()
+    .UseCustomRouting(isProduction)
+    .UseCustomCors()
+    .UseEnterwellHttpExceptionMiddleware()
+    .UseCustomAuth()
+    .UseCustomControllers()
+    .UseCustomSwagger(isProduction);
 
 app.Run();
