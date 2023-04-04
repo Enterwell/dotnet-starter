@@ -86,7 +86,7 @@ public class EfPostgreSqlApplicationUsersRepository : IApplicationUsersRepositor
     {
         var user = await this.context.Users.FindAsync(id);
 
-        return user.MapTo<IApplicationUser>(this.mapper);
+        return user?.MapTo<IApplicationUser>(this.mapper);
     }
 
     /// <summary>

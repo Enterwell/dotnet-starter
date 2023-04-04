@@ -1,6 +1,7 @@
 ﻿using Acme.Infrastructure.EF.PostgreSql;
 using Acme.Infrastructure.EF.PostgreSql.Books;
 using Acme.Infrastructure.EF.PostgreSql.Users;
+using Enterwell.Exceptions;
 using Microsoft.AspNetCore.Identity;
 
 namespace Acme.Tests.Helpers;
@@ -27,6 +28,36 @@ public class DatabaseEntityFactory
     {
         this.context = context ?? throw new ArgumentNullException(nameof(context));
         this.userManager = userManager ?? throw new ArgumentNullException(nameof(userManager));
+    }
+
+    /// <summary>
+    /// Creates the application user asynchronously.
+    /// </summary>
+    /// <param name="email">User's email.</param>
+    /// <param name="password">User's password.</param>
+    /// <param name="fillProperties">Fill properties action.</param>
+    /// <returns>
+    /// An asynchronous task that creates and returns an instance of <see cref="DbApplicationUser"/>.
+    /// </returns>
+    public async Task<DbApplicationUser> CreateUserAsync(string email, string password, Action<DbApplicationUser>? fillProperties = null)
+    {
+        var dbUser = new DbApplicationUser
+        {
+            Email = email,
+            UserName = email
+        };
+
+        // Fill application user properties
+        fillProperties?.Invoke(dbUser);
+
+        var result = await this.userManager.CreateAsync(dbUser, password);
+
+        if (!result.Succeeded)
+        {
+            throw new EnterwellException(result.Errors.First().Description);
+        }
+
+        return dbUser;
     }
 
     /// <summary>
