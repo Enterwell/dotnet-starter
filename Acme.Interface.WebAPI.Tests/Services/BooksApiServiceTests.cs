@@ -1,10 +1,6 @@
 ﻿using Acme.Application.Tests.Mocks;
 using Acme.Core.Books;
-using Acme.Core.Books.Interfaces;
-using Acme.Core.Paging.Enums;
-using Acme.Infrastructure.EF.PostgreSql.Paging;
 using Acme.Interface.WebAPI.Models.Books;
-using Acme.Interface.WebAPI.Models.Paging;
 using Acme.Interface.WebAPI.Services.Books;
 using Acme.Interface.WebAPI.Tests.ServiceRegistrars;
 using Enterwell.Exceptions;
@@ -14,7 +10,7 @@ using Moq;
 namespace Acme.Interface.WebAPI.Tests.Services;
 
 /// <summary>
-/// Books Web API service tests class.
+/// Books web API service tests class.
 /// </summary>
 /// <seealso cref="ApiUnitTestBase{TMockedServices}"/>
 /// <seealso cref="IDisposable"/>

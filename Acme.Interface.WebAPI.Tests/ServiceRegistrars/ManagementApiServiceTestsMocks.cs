@@ -5,16 +5,16 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Acme.Interface.WebAPI.Tests.ServiceRegistrars;
 
 /// <summary>
-/// Books web API service tests mocked dependencies.
+/// Management web API service tests mocked dependencies.
 /// </summary>
-public class BooksApiServiceTestsMocks : IAddServices
+public class ManagementApiServiceTestsMocks : IAddServices
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="BooksApiServiceTestsMocks"/> class.
+    /// Initializes a new instance of the <see cref="ManagementApiServiceTestsMocks"/> class.
     /// </summary>
-    public BooksApiServiceTestsMocks()
+    public ManagementApiServiceTestsMocks()
     {
-        this.BooksServiceMock = new BooksServiceMock();
+        this.ManagementServiceMock = new ManagementServiceMock();
     }
 
     /// <summary>
@@ -23,11 +23,11 @@ public class BooksApiServiceTestsMocks : IAddServices
     /// <param name="services"><see cref="IServiceCollection"/> instance.</param>
     public void AddServices(IServiceCollection services)
     {
-        services.AddSingleton(this.BooksServiceMock.Object);
+        services.AddSingleton(this.ManagementServiceMock.Object);
     }
 
     /// <summary>
-    /// Gets or sets the books service mock.
+    /// Gets or sets the management service mock.
     /// </summary>
-    public BooksServiceMock BooksServiceMock { get; set; }
+    public ManagementServiceMock ManagementServiceMock { get; set; }
 }

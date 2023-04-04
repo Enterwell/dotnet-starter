@@ -46,6 +46,8 @@ public class AuthenticationServiceTests : IClassFixture<ApplicationUnitTestBase<
 
         // Assert.
         authenticationResponse.Should().BeNull();
+
+        this.applicationUsersRepositoryMock.VerifyGetByEmailAndPasswordAsync(email, Times.Once());
     }
 
     /// <summary>
@@ -77,6 +79,8 @@ public class AuthenticationServiceTests : IClassFixture<ApplicationUnitTestBase<
         authenticationResponse!.UserId.Should().Be(userToReturn.Id);
         authenticationResponse.Username.Should().Be(userToReturn.Username);
         authenticationResponse.Token.CreatedDateTimeUtc.Should().BeCloseTo(DateTime.UtcNow, TimeSpan.FromMinutes(1));
+
+        this.applicationUsersRepositoryMock.VerifyGetByEmailAndPasswordAsync(email, Times.Once());
     }
 
     /// <summary>

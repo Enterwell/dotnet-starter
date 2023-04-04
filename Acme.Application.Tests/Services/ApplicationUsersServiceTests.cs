@@ -97,6 +97,8 @@ public class ApplicationUsersServiceTests : IClassFixture<ApplicationUnitTestBas
         this.applicationUsersRepositoryMock
             .VerifyCreateAsync(userCreate, Times.Once())
             .VerifyGetByIdAsync(createdUserId, Times.Once());
+
+        this.applicationUsersRepositoryMock.VerifyCreateAsync(userCreate, Times.Once());
     }
 
     /// <summary>
