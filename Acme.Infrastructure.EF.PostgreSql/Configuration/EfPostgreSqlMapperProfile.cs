@@ -1,4 +1,7 @@
-﻿using AutoMapper;
+﻿using Acme.Core.Users;
+using Acme.Core.Users.Interfaces;
+using Acme.Infrastructure.EF.PostgreSql.Users;
+using AutoMapper;
 
 namespace Acme.Infrastructure.EF.PostgreSql.Configuration;
 
@@ -12,5 +15,15 @@ public class EfPostgreSqlMapperProfile : Profile
     /// </summary>
     public EfPostgreSqlMapperProfile()
     {
+        this.MapApplicationUserModels();
+    }
+
+    /// <summary>
+    /// Maps the application user models.
+    /// </summary>
+    private void MapApplicationUserModels()
+    {
+        this.CreateMap<DbApplicationUser, ApplicationUser>();
+        this.CreateMap<DbApplicationUser, IApplicationUser>().As<ApplicationUser>();
     }
 }

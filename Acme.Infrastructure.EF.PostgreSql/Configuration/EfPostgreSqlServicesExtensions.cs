@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Acme.Core.Users.Interfaces;
+using Acme.Infrastructure.EF.PostgreSql.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -45,6 +46,8 @@ public static class EfPostgreSqlServicesExtensions
     /// <param name="services"><see cref="IServiceCollection"/> instance.</param>
     private static void RegisterRepositories(IServiceCollection services)
     {
+        services
+            .AddTransient<IApplicationUsersRepository, EfPostgreSqlApplicationUsersRepository>();
     }
 
     /// <summary>
@@ -63,15 +66,13 @@ public static class EfPostgreSqlServicesExtensions
         var serviceLifetime = isContextTransient ? ServiceLifetime.Transient : ServiceLifetime.Scoped;
         services
             .AddDbContext<ApplicationDbContext>(options =>
-                options.UseNpgsql(connString, o =>
-                    {
-                        o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
-                    })
-                    .UseSnakeCaseNamingConvention(), serviceLifetime, serviceLifetime)
+                    options
+                        .UseNpgsql(connString, o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)),
+                serviceLifetime, serviceLifetime)
             .AddDatabaseDeveloperPageExceptionFilter();
 
         // Add .NET Core Identity
-        services.AddIdentityCore<IdentityUser>(options =>
+        services.AddIdentityCore<DbApplicationUser>(options =>
             {
                 options.SignIn.RequireConfirmedEmail = false;
                 options.User.RequireUniqueEmail = true;

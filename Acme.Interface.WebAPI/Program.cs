@@ -1,7 +1,7 @@
 using Acme.Application.Configuration;
 using Acme.Infrastructure.EF.PostgreSql.Configuration;
 using Acme.Interface.WebAPI.Configuration;
-using Acme.Interface.WebAPI.Configuration.ServiceExtensions;
+using Acme.Interface.WebAPI.Configuration.InstallerExtensions;
 using Enterwell.Exceptions.Web;
 using Serilog;
 

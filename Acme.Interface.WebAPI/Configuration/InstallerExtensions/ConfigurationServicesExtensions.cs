@@ -1,6 +1,6 @@
 ﻿using Acme.Interface.WebAPI.Settings;
 
-namespace Acme.Interface.WebAPI.Configuration.ServiceExtensions;
+namespace Acme.Interface.WebAPI.Configuration.InstallerExtensions;
 
 /// <summary>
 /// Web API configuration installer extensions.

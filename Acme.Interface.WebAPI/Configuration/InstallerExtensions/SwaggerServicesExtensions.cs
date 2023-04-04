@@ -1,7 +1,7 @@
 ﻿using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Acme.Interface.WebAPI.Configuration.ServiceExtensions;
+namespace Acme.Interface.WebAPI.Configuration.InstallerExtensions;
 
 /// <summary>
 /// Web API Swagger services installer extensions.

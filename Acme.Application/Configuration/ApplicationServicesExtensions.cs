@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Acme.Application.Authentication;
+using Acme.Application.Users;
+using Acme.Core.Authentication.Interfaces;
+using Acme.Core.Users.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Acme.Application.Configuration;
 
@@ -14,6 +18,10 @@ public static class ApplicationServicesExtensions
     /// <returns><see cref="IServiceCollection"/> instance.</returns>
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
+        services
+            .AddTransient<IAuthenticationService, AuthenticationService>()
+            .AddTransient<IApplicationUsersService, ApplicationUsersService>();
+
         return services;
     }
 }

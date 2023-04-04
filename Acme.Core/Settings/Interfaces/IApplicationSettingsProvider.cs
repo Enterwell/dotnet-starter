@@ -1,6 +1,6 @@
 ﻿using Acme.Core.Authentication.Interfaces;
 
-namespace Acme.Core.Settings;
+namespace Acme.Core.Settings.Interfaces;
 
 /// <summary>
 /// Application settings provider interface.

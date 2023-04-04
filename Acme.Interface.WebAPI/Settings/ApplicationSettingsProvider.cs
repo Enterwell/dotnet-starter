@@ -1,5 +1,5 @@
 ﻿using Acme.Core.Authentication.Interfaces;
-using Acme.Core.Settings;
+using Acme.Core.Settings.Interfaces;
 using Microsoft.Extensions.Options;
 
 namespace Acme.Interface.WebAPI.Settings;

@@ -16,7 +16,11 @@
 
   <ItemGroup>
     <Folder Include="Authentication\Interfaces\" />
-    <Folder Include="Settings\" />
+    <Folder Include="CodeExtensions\" />
+    <Folder Include="Management\Interfaces\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Paging\Enums\" />
+    <Folder Include="Paging\Interfaces\" />
   </ItemGroup>
 
 </Project>

@@ -3,7 +3,7 @@ using Acme.Interface.WebAPI.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Acme.Interface.WebAPI.Configuration.ServiceExtensions;
+namespace Acme.Interface.WebAPI.Configuration.InstallerExtensions;
 
 /// <summary>
 /// Web API authentication services installer extensions.

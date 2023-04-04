@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 
-namespace Acme.Interface.WebAPI.Configuration.ServiceExtensions;
+namespace Acme.Interface.WebAPI.Configuration.InstallerExtensions;
 
 /// <summary>
 /// Web API controller services installer extensions.

@@ -1,7 +1,8 @@
-﻿using Acme.Core.Settings;
+﻿using Acme.Core.Settings.Interfaces;
+using Acme.Interface.WebAPI.Services.Authentication;
 using Acme.Interface.WebAPI.Settings;
 
-namespace Acme.Interface.WebAPI.Configuration.ServiceExtensions;
+namespace Acme.Interface.WebAPI.Configuration;
 
 /// <summary>
 /// Web API project services installer extensions.
@@ -18,6 +19,10 @@ public static class ApiServicesExtensions
         // Register providers
         services
             .AddTransient<IApplicationSettingsProvider, ApplicationSettingsProvider>();
+
+        // Register API services
+        services
+            .AddTransient<IAuthenticationApiService, AuthenticationApiService>();
 
         return services;
     }
