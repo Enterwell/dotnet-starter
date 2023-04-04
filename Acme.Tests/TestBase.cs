@@ -2,6 +2,7 @@
 using Acme.Infrastructure.EF.PostgreSql;
 using Acme.Infrastructure.EF.PostgreSql.Configuration;
 using Acme.Interface.WebAPI.Configuration;
+using Acme.Interface.WebAPI.Configuration.InstallerExtensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -75,6 +76,7 @@ public class TestBase : IDisposable
         // Build services
         this.ServiceCollection
             .AddLogging()
+            .AddCustomConfiguration(configuration)
             .AddAutoMapper(
                 typeof(ApiMapperProfile).Assembly,
                 typeof(ApplicationMapperProfile).Assembly,

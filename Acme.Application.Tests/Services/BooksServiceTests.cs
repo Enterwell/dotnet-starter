@@ -12,6 +12,7 @@ namespace Acme.Application.Tests.Services;
 /// Books service tests class.
 /// </summary>
 /// <seealso cref="ApplicationUnitTestBase{TMockedServices}"/>
+/// <seealso cref="BooksServiceTestsMocks"/>
 /// <seealso cref="IDisposable"/>
 public class BooksServiceTests : IClassFixture<ApplicationUnitTestBase<BooksServiceTestsMocks>>, IDisposable
 {
