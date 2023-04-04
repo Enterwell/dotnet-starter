@@ -1,7 +1,9 @@
 ﻿using Acme.Application.Authentication;
+using Acme.Application.Books;
 using Acme.Application.Management;
 using Acme.Application.Users;
 using Acme.Core.Authentication.Interfaces;
+using Acme.Core.Books.Interfaces;
 using Acme.Core.Management.Interfaces;
 using Acme.Core.Users.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +25,8 @@ public static class ApplicationServicesExtensions
         services
             .AddTransient<IManagementService, ManagementService>()
             .AddTransient<IAuthenticationService, AuthenticationService>()
-            .AddTransient<IApplicationUsersService, ApplicationUsersService>();
+            .AddTransient<IApplicationUsersService, ApplicationUsersService>()
+            .AddTransient<IBooksService, BooksService>();
 
         return services;
     }

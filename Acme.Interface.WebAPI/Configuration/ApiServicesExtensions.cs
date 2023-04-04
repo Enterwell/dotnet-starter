@@ -1,5 +1,6 @@
 ﻿using Acme.Core.Settings.Interfaces;
 using Acme.Interface.WebAPI.Services.Authentication;
+using Acme.Interface.WebAPI.Services.Books;
 using Acme.Interface.WebAPI.Services.Management;
 using Acme.Interface.WebAPI.Settings;
 
@@ -24,7 +25,8 @@ public static class ApiServicesExtensions
         // Register API services
         services
             .AddTransient<IManagementApiService, ManagementApiService>()
-            .AddTransient<IAuthenticationApiService, AuthenticationApiService>();
+            .AddTransient<IAuthenticationApiService, AuthenticationApiService>()
+            .AddTransient<IBooksApiService, BooksApiService>();
 
         return services;
     }

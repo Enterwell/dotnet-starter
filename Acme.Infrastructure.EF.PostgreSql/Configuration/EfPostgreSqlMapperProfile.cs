@@ -1,5 +1,8 @@
-﻿using Acme.Core.Users;
+﻿using Acme.Core.Books;
+using Acme.Core.Books.Interfaces;
+using Acme.Core.Users;
 using Acme.Core.Users.Interfaces;
+using Acme.Infrastructure.EF.PostgreSql.Books;
 using Acme.Infrastructure.EF.PostgreSql.Users;
 using AutoMapper;
 
@@ -15,7 +18,17 @@ public class EfPostgreSqlMapperProfile : Profile
     /// </summary>
     public EfPostgreSqlMapperProfile()
     {
+        this.MapBookModels();
         this.MapApplicationUserModels();
+    }
+
+    /// <summary>
+    /// Maps the book models.
+    /// </summary>
+    private void MapBookModels()
+    {
+        this.CreateMap<DbBook, Book>();
+        this.CreateMap<DbBook, IBook>().As<Book>();
     }
 
     /// <summary>

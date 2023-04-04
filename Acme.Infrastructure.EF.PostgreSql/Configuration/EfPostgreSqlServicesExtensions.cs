@@ -1,5 +1,7 @@
-﻿using Acme.Core.Management.Interfaces;
+﻿using Acme.Core.Books.Interfaces;
+using Acme.Core.Management.Interfaces;
 using Acme.Core.Users.Interfaces;
+using Acme.Infrastructure.EF.PostgreSql.Books;
 using Acme.Infrastructure.EF.PostgreSql.Management;
 using Acme.Infrastructure.EF.PostgreSql.Users;
 using Microsoft.EntityFrameworkCore;
@@ -52,7 +54,8 @@ public static class EfPostgreSqlServicesExtensions
     private static void RegisterRepositories(IServiceCollection services)
     {
         services
-            .AddTransient<IApplicationUsersRepository, EfPostgreSqlApplicationUsersRepository>();
+            .AddTransient<IApplicationUsersRepository, EfPostgreSqlApplicationUsersRepository>()
+            .AddTransient<IBooksRepository, EfPostgreSqlBooksRepository>();
     }
 
     /// <summary>
