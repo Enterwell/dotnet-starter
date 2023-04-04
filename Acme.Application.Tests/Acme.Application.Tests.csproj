@@ -23,7 +23,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Acme.Infrastructure.EF.PostgreSql.Tests\Acme.Infrastructure.EF.PostgreSql.Tests.csproj" />
     <ProjectReference Include="..\Acme.Tests\Acme.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Mocks\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
