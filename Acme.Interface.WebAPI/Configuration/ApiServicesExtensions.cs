@@ -1,5 +1,6 @@
 ﻿using Acme.Core.Settings.Interfaces;
 using Acme.Interface.WebAPI.Services.Authentication;
+using Acme.Interface.WebAPI.Services.Management;
 using Acme.Interface.WebAPI.Settings;
 
 namespace Acme.Interface.WebAPI.Configuration;
@@ -22,6 +23,7 @@ public static class ApiServicesExtensions
 
         // Register API services
         services
+            .AddTransient<IManagementApiService, ManagementApiService>()
             .AddTransient<IAuthenticationApiService, AuthenticationApiService>();
 
         return services;

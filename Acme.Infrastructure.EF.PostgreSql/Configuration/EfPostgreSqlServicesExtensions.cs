@@ -1,4 +1,6 @@
-﻿using Acme.Core.Users.Interfaces;
+﻿using Acme.Core.Management.Interfaces;
+using Acme.Core.Users.Interfaces;
+using Acme.Infrastructure.EF.PostgreSql.Management;
 using Acme.Infrastructure.EF.PostgreSql.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -38,6 +40,9 @@ public static class EfPostgreSqlServicesExtensions
     /// <param name="services"><see cref="IServiceCollection"/> instance.</param>
     private static void RegisterServices(IServiceCollection services)
     {
+        services
+            .AddTransient<IDatabaseManagementService, DatabaseManagementService>()
+            .AddTransient<IDatabaseSeedService, DatabaseSeedService>();
     }
 
     /// <summary>
