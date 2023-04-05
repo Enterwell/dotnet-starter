@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Enterwell.Exceptions.Standard\Enterwell.Exceptions.Standard.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Authentication\Interfaces\" />
+    <Folder Include="CodeExtensions\" />
+    <Folder Include="Management\Interfaces\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Paging\Enums\" />
+    <Folder Include="Paging\Interfaces\" />
+  </ItemGroup>
+
+</Project>

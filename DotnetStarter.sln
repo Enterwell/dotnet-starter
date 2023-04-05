@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33513.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Interface.WebAPI", "Acme.Interface.WebAPI\Acme.Interface.WebAPI.csproj", "{9A800629-D4F6-448A-BE58-95532024CCA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{10670AE3-3867-48FF-9461-1C4196CFC6D3}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Core", "Acme.Core\Acme.Core.csproj", "{30D7B975-F6B8-4B01-969B-84EC6978C57D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Application", "Acme.Application\Acme.Application.csproj", "{0F69DA6E-D544-4243-9B83-0F1E2E3E51DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Infrastructure.EF.PostgreSql", "Acme.Infrastructure.EF.PostgreSql\Acme.Infrastructure.EF.PostgreSql.csproj", "{077F886B-22F4-40F5-9F29-8A512EBCD6FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B1D7EBD8-A521-4234-875D-F9C6A1E1ED01}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Tests", "Acme.Tests\Acme.Tests.csproj", "{30703A56-B76A-472C-9DC6-B1978056EAAC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Application.Tests", "Acme.Application.Tests\Acme.Application.Tests.csproj", "{B64B8A99-F328-4CA6-B3B7-081AAC489BB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Infrastructure.EF.PostgreSql.Tests", "Acme.Infrastructure.EF.PostgreSql.Tests\Acme.Infrastructure.EF.PostgreSql.Tests.csproj", "{EC69EDBF-5DB0-4EB4-98AE-DEB34B1ED939}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enterwell.Exceptions.Standard", "Enterwell.Exceptions.Standard\Enterwell.Exceptions.Standard.csproj", "{79C46543-2F44-4B12-AFA2-A03672F6C7BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enterwell.Exceptions.Standard.Web", "Enterwell.Exceptions.Standard.Web\Enterwell.Exceptions.Standard.Web.csproj", "{CE941341-C6E7-4BA4-9940-F09702090FFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.Interface.WebAPI.Tests", "Acme.Interface.WebAPI.Tests\Acme.Interface.WebAPI.Tests.csproj", "{B176F45C-2526-4DA2-B6B0-EABB69392DFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A800629-D4F6-448A-BE58-95532024CCA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A800629-D4F6-448A-BE58-95532024CCA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A800629-D4F6-448A-BE58-95532024CCA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A800629-D4F6-448A-BE58-95532024CCA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30D7B975-F6B8-4B01-969B-84EC6978C57D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30D7B975-F6B8-4B01-969B-84EC6978C57D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30D7B975-F6B8-4B01-969B-84EC6978C57D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30D7B975-F6B8-4B01-969B-84EC6978C57D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F69DA6E-D544-4243-9B83-0F1E2E3E51DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F69DA6E-D544-4243-9B83-0F1E2E3E51DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F69DA6E-D544-4243-9B83-0F1E2E3E51DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F69DA6E-D544-4243-9B83-0F1E2E3E51DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{077F886B-22F4-40F5-9F29-8A512EBCD6FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{077F886B-22F4-40F5-9F29-8A512EBCD6FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{077F886B-22F4-40F5-9F29-8A512EBCD6FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{077F886B-22F4-40F5-9F29-8A512EBCD6FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30703A56-B76A-472C-9DC6-B1978056EAAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30703A56-B76A-472C-9DC6-B1978056EAAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30703A56-B76A-472C-9DC6-B1978056EAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30703A56-B76A-472C-9DC6-B1978056EAAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B64B8A99-F328-4CA6-B3B7-081AAC489BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B64B8A99-F328-4CA6-B3B7-081AAC489BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B64B8A99-F328-4CA6-B3B7-081AAC489BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B64B8A99-F328-4CA6-B3B7-081AAC489BB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC69EDBF-5DB0-4EB4-98AE-DEB34B1ED939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC69EDBF-5DB0-4EB4-98AE-DEB34B1ED939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC69EDBF-5DB0-4EB4-98AE-DEB34B1ED939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC69EDBF-5DB0-4EB4-98AE-DEB34B1ED939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79C46543-2F44-4B12-AFA2-A03672F6C7BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79C46543-2F44-4B12-AFA2-A03672F6C7BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79C46543-2F44-4B12-AFA2-A03672F6C7BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79C46543-2F44-4B12-AFA2-A03672F6C7BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE941341-C6E7-4BA4-9940-F09702090FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE941341-C6E7-4BA4-9940-F09702090FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE941341-C6E7-4BA4-9940-F09702090FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE941341-C6E7-4BA4-9940-F09702090FFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B176F45C-2526-4DA2-B6B0-EABB69392DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B176F45C-2526-4DA2-B6B0-EABB69392DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B176F45C-2526-4DA2-B6B0-EABB69392DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B176F45C-2526-4DA2-B6B0-EABB69392DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30703A56-B76A-472C-9DC6-B1978056EAAC} = {B1D7EBD8-A521-4234-875D-F9C6A1E1ED01}
+		{B64B8A99-F328-4CA6-B3B7-081AAC489BB8} = {B1D7EBD8-A521-4234-875D-F9C6A1E1ED01}
+		{EC69EDBF-5DB0-4EB4-98AE-DEB34B1ED939} = {B1D7EBD8-A521-4234-875D-F9C6A1E1ED01}
+		{B176F45C-2526-4DA2-B6B0-EABB69392DFE} = {B1D7EBD8-A521-4234-875D-F9C6A1E1ED01}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B9CB91B-E9A7-4844-8808-DADE223BF45C}
+	EndGlobalSection
+EndGlobal
