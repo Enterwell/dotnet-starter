@@ -9,6 +9,7 @@
 </h1>
 
 <div align="center">
+  <p>ASP.NET Core Web API using .NET 7 and PostgreSQL with Entity Framework Core following the principles of Clean Architecture.</p>
   <div>
 
   [![Test .NET Starter](https://github.com/Enterwell/dotnet-starter/actions/workflows/CI.yml/badge.svg)](https://github.com/Enterwell/dotnet-starter/actions/workflows/CI.yml)
@@ -18,7 +19,6 @@
   [![GitHub pull requests](https://img.shields.io/github/issues-pr/Enterwell/dotnet-starter?color=0088ff)](https://github.com/Enterwell/dotnet-starter/pulls)
 
   </div>
-
   <div>
     <a href="https://dotnet.microsoft.com" target="_blank">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" width="40" />
@@ -39,8 +39,6 @@
       <img src="https://avatars.githubusercontent.com/u/1434934" width="40" />
     </a>
   </div>
-
-  <p>ASP.NET Core Web API using .NET 7 and PostgreSQL with Entity Framework Core following the principles of Clean Architecture.</p>
 </div>
 
 ## 📖 Table of contents
