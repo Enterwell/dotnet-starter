@@ -42,12 +42,12 @@
 </div>
 
 ## 📖 Table of contents
-+ 🚀 [Technologies](#technologies)
-+ 🛠️ [Prerequisites](#prerequisites)
-+ 🔰 [Getting started](#getting-started)
-+ 🏛️ [Project structure](#project-structure)
-+ ☎️ [Support](#support)
-+ 🪪 [License](#license)
++ 🚀 [Technologies](#-technologies)
++ 🛠️ [Prerequisites](#-prerequisites)
++ 🔰 [Getting started](#-getting-started)
++ 🏛️ [Project structure](#-project-structure)
++ ☎️ [Support](#-support)
++ 🪪 [License](#-license)
 
 ## 🚀 Technologies
 + [ASP.NET Core 7](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-7.0) - Cross-platform, high-performance, open source framework for building modern, cloud-enabled, Internet-connected applications
@@ -58,7 +58,7 @@
 + [Serilog](https://serilog.net/) - simple .NET logging with fully-structured events
 + [xUnit](https://xunit.net/), [FluentAssertions](https://fluentassertions.com/) and [Moq](https://github.com/moq)
 
-## 🛠️ Prerequisites
+## 🛠 Prerequisites
 + [.NET 7 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
 + [PostgreSQL](https://www.postgresql.org/) installed on your local machine
 + Code editor ([Visual Studio 2022](https://visualstudio.microsoft.com/vs/) recommended)
@@ -119,7 +119,7 @@ Generate a new migration using Visual Studio Package Manager Console (from menu:
 PM> Add-Migration <MIGRATION_NAME>
 ```
 
-## 🏛️ Project structure
+## 🏛 Project structure
 
 ### Core
 Core encapsulate *enterprise wide* business rules or, in simpler terms, core entities that are the business objects of the application. They encapsulate the most general and high-level rules. They are the least likely to change when something external changes.
@@ -136,7 +136,7 @@ Layer that acts as a set of adapters that convert data from the format most conv
 
 So, to be frank, only *Program.cs* is referencing Infrastructure and for that reason, we previously had a separate layer called `Interface.WebAPI.Starter` that would be bootstrapping the application and its' DI container. But, to reduce the number of layers, we stopped with that practice.
 
-## ☎️ Support
+## ☎ Support
 If you are having problems, please let us know by [raising a new issue](https://github.com/Enterwell/dotnet-starter/issues/new).
 
 ## 🪪 License
