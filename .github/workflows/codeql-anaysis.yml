@@ -18,7 +18,9 @@ jobs:
     permissions:
       # Required for all workflows
       actions: read
-
+      contents: read
+      security-events: write
+  
     steps:
       # Checkout
       - name: Checkout
