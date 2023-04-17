@@ -6,14 +6,13 @@ on:
     branches:
       - main
       - feature/**
-  push:
-    branches:
-      - main
 
 jobs:
   test-starter:
     name: Test starter
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     # PostgreSQL service container to run with the job
     services:
