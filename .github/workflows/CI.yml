@@ -11,8 +11,7 @@ jobs:
   test-starter:
     name: Test starter
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    permissions: write-all
 
     # PostgreSQL service container to run with the job
     services:
