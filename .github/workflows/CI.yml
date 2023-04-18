@@ -1,4 +1,4 @@
-name: Test .NET Starter
+name: CI
 
 # Triggering the workflow on PRs and pushes to relevant branches
 on:
@@ -6,6 +6,9 @@ on:
     branches:
       - main
       - feature/**
+  push:
+    branches:
+      - main
 
 jobs:
   test-starter:

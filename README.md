@@ -12,7 +12,7 @@
   <p>ASP.NET Core Web API using .NET 7 and PostgreSQL with Entity Framework Core following the principles of Clean Architecture.</p>
   <div>
 
-  [![Test .NET Starter](https://github.com/Enterwell/dotnet-starter/actions/workflows/CI.yml/badge.svg)](https://github.com/Enterwell/dotnet-starter/actions/workflows/CI.yml)
+  [![CI](https://github.com/Enterwell/dotnet-starter/actions/workflows/CI.yml/badge.svg)](https://github.com/Enterwell/dotnet-starter/actions/workflows/CI.yml)
   [![CodeQL](https://github.com/Enterwell/dotnet-starter/actions/workflows/codeql-anaysis.yml/badge.svg)](https://github.com/Enterwell/dotnet-starter/actions/workflows/codeql-anaysis.yml)
   [![GitHub issues](https://img.shields.io/github/issues/Enterwell/dotnet-starter?color=0088ff)](https://github.com/Enterwell/dotnet-starter/issues)
   [![GitHub contributors](https://img.shields.io/github/contributors/Enterwell/dotnet-starter)](https://github.com/Enterwell/dotnet-starter/graphs/contributors)
