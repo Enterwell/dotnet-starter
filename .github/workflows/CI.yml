@@ -1,4 +1,4 @@
-name: Test .NET Starter
+name: CI
 
 # Triggering the workflow on PRs and pushes to relevant branches
 on:
@@ -14,6 +14,7 @@ jobs:
   test-starter:
     name: Test starter
     runs-on: ubuntu-latest
+    permissions: write-all
 
     # PostgreSQL service container to run with the job
     services:

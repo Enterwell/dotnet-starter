@@ -12,7 +12,7 @@
   <p>ASP.NET Core Web API using .NET 7 and PostgreSQL with Entity Framework Core following the principles of Clean Architecture.</p>
   <div>
 
-  [![Test .NET Starter](https://github.com/Enterwell/dotnet-starter/actions/workflows/CI.yml/badge.svg)](https://github.com/Enterwell/dotnet-starter/actions/workflows/CI.yml)
+  [![CI](https://github.com/Enterwell/dotnet-starter/actions/workflows/CI.yml/badge.svg)](https://github.com/Enterwell/dotnet-starter/actions/workflows/CI.yml)
   [![CodeQL](https://github.com/Enterwell/dotnet-starter/actions/workflows/codeql-anaysis.yml/badge.svg)](https://github.com/Enterwell/dotnet-starter/actions/workflows/codeql-anaysis.yml)
   [![GitHub issues](https://img.shields.io/github/issues/Enterwell/dotnet-starter?color=0088ff)](https://github.com/Enterwell/dotnet-starter/issues)
   [![GitHub contributors](https://img.shields.io/github/contributors/Enterwell/dotnet-starter)](https://github.com/Enterwell/dotnet-starter/graphs/contributors)
@@ -132,7 +132,7 @@ Layer that encapsulates and implements all of the use cases of the system, or to
 Layer that contains classes for accessing external resources such as file systems, web services, SMTP, databases and so on. In this starter, we have `Infrastructure.EF.PostgreSql` layer that contains the Entity Framework logic for accessing PostgreSQL database. It is dependent on the Core layer and has no dependencies on any other layer or project. This layer also contains classes that are based on the interfaces defined within the Core layer.
 
 ### Interface
-Layer that acts as a set of adapters that convert data from the format most convenient for the use case and entities to the format most convenient for some external resource like the web API or CLI. In this starter, we have `Infrastructure.WebAPI` layer that contains the logic for mapping domain logic entities into DTOs used by the controllers for providing RESTful API to the web. This layer depends on both the Application and Infrastructure layers, however, the dependency on the Infrastructure layer is here only to support dependency injection.
+Layer that acts as a set of adapters that convert data from the format most convenient for the use case and entities to the format most convenient for some external resource like the web API or CLI. In this starter, we have `Interface.WebAPI` layer that contains the logic for mapping domain logic entities into DTOs used by the controllers for providing RESTful API to the web. This layer depends on both the Application and Infrastructure layers, however, the dependency on the Infrastructure layer is here only to support dependency injection.
 
 So, to be frank, only *Program.cs* is referencing Infrastructure and for that reason, we previously had a separate layer called `Interface.WebAPI.Starter` that would be bootstrapping the application and its' DI container. But, to reduce the number of layers, we stopped with that practice.
 
