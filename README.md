@@ -9,7 +9,7 @@
 </h1>
 
 <div align="center">
-  <p>ASP.NET Core Web API using .NET 7 and PostgreSQL with Entity Framework Core following the principles of Clean Architecture.</p>
+  <p>ASP.NET Core Web API using .NET 8 and PostgreSQL with Entity Framework Core following the principles of Clean Architecture.</p>
   <div>
 
   [![CI](https://github.com/Enterwell/dotnet-starter/actions/workflows/CI.yml/badge.svg)](https://github.com/Enterwell/dotnet-starter/actions/workflows/CI.yml)
@@ -59,7 +59,7 @@
 + [xUnit](https://xunit.net/), [FluentAssertions](https://fluentassertions.com/) and [Moq](https://github.com/moq)
 
 ## 🛠 Prerequisites
-+ [.NET 7 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
++ [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
 + [PostgreSQL](https://www.postgresql.org/) installed on your local machine
 + Code editor ([Visual Studio 2022](https://visualstudio.microsoft.com/vs/) recommended)
 
