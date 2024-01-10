@@ -80,6 +80,16 @@ Now you can download the repository without any hassle and unnecessary git histo
 degit https://github.com/Enterwell/dotnet-starter dotnet-starter
 ```
 
+### Renaming the solution and projects
+
+If you want to replace the placeholder name "Acme", you can easily do so using the script `StarterRename.ps1`
+
+```bash
+.\StarterRename.ps1 -newName TestApp
+```
+
+This will update all namespaces, usings, project names and solution file. No further action should be necessary on your part.
+
 ### Running the application
 Set the `Acme.Interface.WebAPI` as the startup project, build and run the application.
 
