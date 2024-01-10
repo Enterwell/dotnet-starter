@@ -59,7 +59,7 @@
 + [xUnit](https://xunit.net/), [FluentAssertions](https://fluentassertions.com/) and [Moq](https://github.com/moq)
 
 ## 🛠 Prerequisites
-+ [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
++ [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 + [PostgreSQL](https://www.postgresql.org/) installed on your local machine
 + Code editor ([Visual Studio 2022](https://visualstudio.microsoft.com/vs/) recommended)
 
