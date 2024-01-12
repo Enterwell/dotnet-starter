@@ -25,7 +25,7 @@ foreach ($file in $allFiles) {
 }
 
 # Rename files and directories containing the old name
-$allFiles | ForEach-Object {
+Get-ChildItem -Path $solutionRoot -Recurse | ForEach-Object {
     $newPath = $_.FullName -replace $oldName, $newName
     Move-Item -Path $_.FullName -Destination $newPath -ErrorAction SilentlyContinue
 }
