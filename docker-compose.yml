@@ -1,0 +1,69 @@
+version: '3.4'
+
+services:
+  acme-interface-webapi:
+    container_name: acme-interface-webapi
+    image: acme-interface-webapi:latest
+    build:
+      context: .
+      dockerfile: Acme.Interface.WebAPI/Dockerfile
+    environment:
+      - PostgreSQL__ConnectionString=host=acme-interface-webapi-database;port=5432;database=acme;username=user;password=password
+    volumes:
+        - ./docker-data/acme-interface-webapi/:/acme-interface-webapi
+    ports:
+      - "9010:8080"
+      - "9011:8081"
+    depends_on:
+      - acme-interface-webapi-database
+      - acme-test-database
+    networks:
+      - acme-network
+
+  acme-interface-webapi-database:
+    container_name: acme-interface-webapi-database
+    image: postgres:14.3
+    ports:
+      - "9101:5432"
+    restart: always
+    volumes:
+      - ./docker-data/acme-interface-webapi-database/postgresql/data:/var/lib/postgresql/data
+      - ./docker-data/db-exports/:/db-exports/
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=acme
+    networks:
+      - acme-network
+      
+  acme-test-database:
+    container_name: acme-test-database
+    image: postgres:14.3
+    ports:
+      - "9102:5432"
+    restart: always
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test123
+      - POSTGRES_DB=acme-test
+    networks:
+      - acme-network
+ 
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4:6.10
+    restart: always
+    volumes:
+      - ./docker-data/pgadmin4:/var/lib/pgadmin
+      - ./docker-data/pgadmin4/servers.json:/pgadmin4/servers.json
+    environment:
+        PGADMIN_DEFAULT_EMAIL: admin@admin.com
+        PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "9100:80"
+    networks:
+      - acme-network
+
+networks:
+  acme-network:
+    driver: bridge
