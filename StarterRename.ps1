@@ -29,10 +29,3 @@ Get-ChildItem -Path $solutionRoot -Recurse | ForEach-Object {
     $newPath = $_.FullName -replace $oldName, $newName
     Move-Item -Path $_.FullName -Destination $newPath -ErrorAction SilentlyContinue
 }
-
-# Rename the solution file with the new name
-$solutionFilePath = Join-Path -Path $solutionRoot -ChildPath "DotnetStarter.sln"
-if (Test-Path $solutionFilePath) {
-    $newSolutionFilePath = $solutionFilePath -replace "DotnetStarter.sln", "$newName.sln"
-    Move-Item -Path $solutionFilePath -Destination $newSolutionFilePath -ErrorAction SilentlyContinue
-}
