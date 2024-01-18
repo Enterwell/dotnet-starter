@@ -45,15 +45,15 @@ jobs:
 
       # Restoring solution packages
       - name: Restore packages
-        run: dotnet restore DotnetStarter.sln
+        run: dotnet restore Acme.sln
       
       # Building the solution
       - name: Solution build
-        run: dotnet build DotnetStarter.sln --configuration Release --no-restore
+        run: dotnet build Acme.sln --configuration Release --no-restore
 
       # Testing the solution
       - name: Solution test
-        run: dotnet test DotnetStarter.sln --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
+        run: dotnet test Acme.sln --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
       
       # Combine code coverage reports into one
       - name: Create code coverage reports
