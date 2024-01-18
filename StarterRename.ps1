@@ -4,11 +4,8 @@ param (
     [string]$solutionRoot = ".\"
 )
 
-# Recursively get all files in the solution directory
-$allFiles = Get-ChildItem -Path $solutionRoot -Recurse
-
-# Iterate through each file and replace occurrences of the old name
-foreach ($file in $allFiles) {
+# Iterate through each file
+foreach ($file in Get-ChildItem -Path $solutionRoot -Recurse) {
     # Skip directories
     if ($file.PSIsContainer) {
         continue
@@ -17,11 +14,11 @@ foreach ($file in $allFiles) {
     # Read the content of the file
     $content = Get-Content $file.FullName -Raw
 
-    # Replace occurrences of the old name with the new name
-    $newContent = $content -replace $oldName, $newName
+    # Replace occurrences of the old name with the new name (must be lowercase in case of docker compose file)
+    $newContent = $content -replace $oldName, $(If($file.FullName -match "docker-compose") { $newName.ToLower() } Else { $newName })
 
     # Write the updated content back to the file
-    Set-Content -Path $file.FullName -Value $newContent
+    Set-Content -Path $file.FullName -Value $newContent -NoNewline
 }
 
 # Rename files and directories containing the old name

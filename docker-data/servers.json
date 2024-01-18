@@ -1,0 +1,22 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "Acme API DB",
+            "Group": "Servers",
+            "Host": "acme-interface-webapi-database",
+            "Port": 5432,
+            "MaintenanceDB": "postgres",
+            "Username": "user",
+            "SSLMode": "prefer"
+        },
+        "2": {
+            "Name": "Acme API Test DB",
+            "Group": "Servers",
+            "Host": "acme-test-database",
+            "Port": 5432,
+            "MaintenanceDB": "postgres",
+            "Username": "test",
+            "SSLMode": "prefer"
+        }
+    }
+}

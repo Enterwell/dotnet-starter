@@ -30,7 +30,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enterwell.Exceptions.Standa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enterwell.Exceptions.Standard.Web", "Enterwell.Exceptions.Standard.Web\Enterwell.Exceptions.Standard.Web.csproj", "{CE941341-C6E7-4BA4-9940-F09702090FFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.Interface.WebAPI.Tests", "Acme.Interface.WebAPI.Tests\Acme.Interface.WebAPI.Tests.csproj", "{B176F45C-2526-4DA2-B6B0-EABB69392DFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Interface.WebAPI.Tests", "Acme.Interface.WebAPI.Tests\Acme.Interface.WebAPI.Tests.csproj", "{B176F45C-2526-4DA2-B6B0-EABB69392DFE}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{CBE7C77A-9BC5-4EEF-9F57-8D6C95371663}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,6 +80,10 @@ Global
 		{B176F45C-2526-4DA2-B6B0-EABB69392DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B176F45C-2526-4DA2-B6B0-EABB69392DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B176F45C-2526-4DA2-B6B0-EABB69392DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBE7C77A-9BC5-4EEF-9F57-8D6C95371663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBE7C77A-9BC5-4EEF-9F57-8D6C95371663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBE7C77A-9BC5-4EEF-9F57-8D6C95371663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBE7C77A-9BC5-4EEF-9F57-8D6C95371663}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
