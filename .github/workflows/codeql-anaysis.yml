@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - main
+      - stage
   schedule:
     - cron: '00 0 * * 1'
 
