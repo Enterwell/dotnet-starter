@@ -24,7 +24,8 @@
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
       "publishAllPorts": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "PostgreSQL:ConnectionString": "Server=host.docker.internal;Database=Acme;Port=5432;User Id=postgres;Password=password;"
       },
       "httpPort": 8080,
       "sslPort": 8081
