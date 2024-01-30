@@ -43,10 +43,10 @@ public class BooksController : BaseV1ApiController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> GetAllAsync(
-        [FromQuery] int page = 0,
-        [FromQuery] int pageSize = 20,
-        [FromQuery] string sortColumn = "Id",
-        [FromQuery] SortDirection sortDirection = SortDirection.Ascending) =>
+        int page = 0,
+        int pageSize = 20,
+        string sortColumn = "Id",
+        SortDirection sortDirection = SortDirection.Ascending) =>
         this.Ok(await this.booksApiService.GetAllAsync(new PagedRequestDto(page, pageSize, sortColumn, sortDirection)));
 
     /// <summary>
