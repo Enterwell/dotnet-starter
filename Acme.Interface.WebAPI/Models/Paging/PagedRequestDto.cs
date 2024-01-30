@@ -26,4 +26,25 @@ public class PagedRequestDto
     /// Gets or sets the sort direction.
     /// </summary>
     public SortDirection SortDirection { get; set; } = SortDirection.Ascending;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="PagedRequestDto"/> class.
+    /// </summary>
+    public PagedRequestDto()
+    { }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="PagedRequestDto"/> class.
+    /// </summary>
+    /// <param name="page">The page.</param>
+    /// <param name="pageSize">Size of the page.</param>
+    /// <param name="sortColumn">The sort column.</param>
+    /// <param name="sortDirection">The sort direction.</param>
+    public PagedRequestDto(int page, int pageSize, string sortColumn, SortDirection sortDirection)
+    {
+        Page = page;
+        PageSize = pageSize;
+        SortColumn = sortColumn;
+        SortDirection = sortDirection;
+    }
 }

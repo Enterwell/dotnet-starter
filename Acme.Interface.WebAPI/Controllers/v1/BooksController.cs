@@ -47,7 +47,7 @@ public class BooksController : BaseV1ApiController
         [FromQuery] int pageSize = 20,
         [FromQuery] string sortColumn = "Id",
         [FromQuery] SortDirection sortDirection = SortDirection.Ascending) =>
-        this.Ok(await this.booksApiService.GetAllAsync(new PagedRequestDto { Page = page, PageSize = pageSize, SortColumn = sortColumn, SortDirection = sortDirection }));
+        this.Ok(await this.booksApiService.GetAllAsync(new PagedRequestDto(page, pageSize, sortColumn, sortDirection)));
 
     /// <summary>
     /// Gets the book by its identifier asynchronously.
