@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using System.Text.Json.Serialization;
 
 namespace Acme.Interface.WebAPI.Configuration.InstallerExtensions;
 
@@ -61,6 +62,9 @@ public static class ApiControllersServicesExtensions
                     .Build();
 
                 config.Filters.Add(new AuthorizeFilter(policy));
+            }).AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
             });
 
         services.AddRouting(options => options.LowercaseUrls = true);
