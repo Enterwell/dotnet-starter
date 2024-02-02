@@ -2,6 +2,7 @@ using Acme.Application.Configuration;
 using Acme.Infrastructure.EF.PostgreSql.Configuration;
 using Acme.Interface.WebAPI.Configuration;
 using Acme.Interface.WebAPI.Configuration.InstallerExtensions;
+using Acme.Interface.WebAPI.Extensions;
 using Enterwell.Exceptions.Web;
 using Serilog;
 
@@ -34,7 +35,8 @@ builder.Services
     .AddEfPostgreSqlInfrastructure(builder.Configuration)
     .AddCustomCors()
     .AddCustomAuth(builder.Configuration)
-    .AddCustomControllers();
+    .AddCustomControllers()
+    .AddCustomHealthChecks(builder.Configuration);
 
 var app = builder.Build();
 
@@ -52,5 +54,8 @@ app
     .UseCustomAuth()
     .UseCustomControllers()
     .UseCustomSwagger(isProduction);
+
+app
+    .MapHealthChecksWithJsonResponse("/healthz");
 
 app.Run();
