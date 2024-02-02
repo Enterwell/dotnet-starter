@@ -1,5 +1,4 @@
-﻿using Acme.Core.Paging.Enums;
-using Acme.Interface.WebAPI.Controllers.v1.Base;
+﻿using Acme.Interface.WebAPI.Controllers.v1.Base;
 using Acme.Interface.WebAPI.Models.Books;
 using Acme.Interface.WebAPI.Models.Paging;
 using Acme.Interface.WebAPI.Services.Books;
@@ -31,23 +30,16 @@ public class BooksController : BaseV1ApiController
     /// <summary>
     /// Gets all books paged asynchronously.
     /// </summary>
-    /// <param name="page">The page.</param>
-    /// <param name="pageSize">Size of the page.</param>
-    /// <param name="sortColumn">The sort column.</param>
-    /// <param name="sortDirection">The sort direction.</param>
+    /// <param name="pagedRequestDto">The paged request dto.</param>
     /// <returns>
     /// Paged books.
     /// </returns>
-    [HttpGet("search")]
+    [HttpGet]
     [ProducesResponseType(typeof(PagedResponseDto<BookDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> GetAllAsync(
-        int page = 0,
-        int pageSize = 20,
-        string sortColumn = "Id",
-        SortDirection sortDirection = SortDirection.Ascending) =>
-        this.Ok(await this.booksApiService.GetAllAsync(new PagedRequestDto(page, pageSize, sortColumn, sortDirection)));
+    public async Task<IActionResult> GetAllAsync([FromQuery] PagedRequestDto pagedRequestDto) =>
+        this.Ok(await this.booksApiService.GetAllAsync(pagedRequestDto));
 
     /// <summary>
     /// Gets the book by its identifier asynchronously.
