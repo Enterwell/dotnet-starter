@@ -46,6 +46,8 @@
 + 🛠️ [Prerequisites](#-prerequisites)
 + 🔰 [Getting started](#-getting-started)
 + 🏛️ [Project structure](#-project-structure)
++ 🔄 [Continous integration](#-continous-integration)
++ 📄 [Changelog manager](#-changelog-manager)
 + ☎️ [Support](#-support)
 + 🪪 [License](#-license)
 
@@ -145,6 +147,25 @@ Layer that contains classes for accessing external resources such as file system
 Layer that acts as a set of adapters that convert data from the format most convenient for the use case and entities to the format most convenient for some external resource like the web API or CLI. In this starter, we have `Interface.WebAPI` layer that contains the logic for mapping domain logic entities into DTOs used by the controllers for providing RESTful API to the web. This layer depends on both the Application and Infrastructure layers, however, the dependency on the Infrastructure layer is here only to support dependency injection.
 
 So, to be frank, only *Program.cs* is referencing Infrastructure and for that reason, we previously had a separate layer called `Interface.WebAPI.Starter` that would be bootstrapping the application and its' DI container. But, to reduce the number of layers, we stopped with that practice.
+
+### 🔄 Continous integration
+
+We've set up a couple of basic CI pipelines for GitHub Actions. You should review them and correct your branch names, if needed.
+
+There are actions for:
+
++ Continous integration (CI) - checkouts, restores packages, builds, runs unit tests and adds code coverage
++ Code quality analysis - runs code quality analysis using CodeQL
++ Release - bumps the release version and merges _changelog entries_ into `CHANGELOG.MD` and optionally adds the git tag (if configured)
+
+## 📄 Changelog manager
+
+We like to see a nice and up-to-date changelog between releases, but sometimes that's just too much work. To simplify this process, we've developed our own [Changelog Manager](https://github.com/Enterwell/ChangelogManager) which adheres to the [Keep a changelog](https://keepachangelog.com/en/1.0.0/#how) principles, along with a couple of integrations to help you create _changelog entries_:
+
++ [Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=Enterwell.EnterwellChangelogVsix)
++ [CLI tool](https://github.com/Enterwell/ChangelogManager/blob/main/Enterwell.CI.Changelog.CLI/README.md#changelog-create-cli-tool)
+
+In short, you create _changelog entries_ either by manually adding entries (files) into the `./changes` folder (if you _really_ want to do it that way...) or by using one of the above mentioned tools. As your PR's are merged into the `stage` branch (or your equivalent development branch) this folder will accumulate entries which will be bundled up into your `CHANGELOG.MD` when you create a release (ie. when you merge `stage` into `main`), and the folder will be purged. Rinse and repeat for your next release!
 
 ## ☎ Support
 If you are having problems, please let us know by [raising a new issue](https://github.com/Enterwell/dotnet-starter/issues/new).
