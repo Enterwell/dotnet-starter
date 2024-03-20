@@ -50,7 +50,7 @@
 + 🪪 [License](#-license)
 
 ## 🚀 Technologies
-+ [ASP.NET Core 7](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-7.0) - Cross-platform, high-performance, open source framework for building modern, cloud-enabled, Internet-connected applications
++ [ASP.NET Core 8](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-8.0) - Cross-platform, high-performance, open source framework for building modern, cloud-enabled, Internet-connected applications
 + [ASP.NET Core Identity](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-7.0&tabs=visual-studio) - membership system that allows login functionality
 + [Entity Framework Core 7](https://learn.microsoft.com/en-us/ef/core/) - lightweight, extensible, open source and cross-platform object-relational mapper (O/RM)
 + [AutoMapper](https://automapper.org/) - convention-based object-object mapper
