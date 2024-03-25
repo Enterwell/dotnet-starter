@@ -1,0 +1,64 @@
+# This pipeline will do a package restore, build the source code, run tests and publish the code coverage report to the pipeline
+
+# Variables
+variables:
+  StartupProjectName: Acme.Interface.WebAPI
+  StartupProject: $(Build.SourcesDirectory)/$(StartupProjectName)/$(StartupProjectName).csproj
+  Solution: $(Build.SourcesDirectory)/Acme.sln
+  # TestProjects: $(Build.SourcesDirectory)/*[Tt]ests/*.csproj
+  BuildConfiguration: Release
+
+trigger: none
+
+pool:
+  vmImage: "ubuntu-latest"
+
+  steps:
+  # Starting up the test database in Docker
+  - script: sudo docker-compose up -d acme-test-database
+    displayName: Test database in Docker
+
+  # Defining what SDK version to use
+  - task: UseDotNet@3
+    inputs:
+      packageType: sdk
+      version: 8.0.x
+    displayName: Use .NET SDK 8.0.x
+
+  # Restoring solution packages
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: restore
+      projects: $(Solution)
+    displayName: Restore packages
+
+  # Building the solution
+  - task: DotNetCoreCLI@3
+    inputs:
+      command: build
+      projects: $(Solution)
+      arguments: --configuration $(BuildConfiguration)
+    displayName: Solution build
+
+  # Testing the solution
+  - task: DotNetCoreCLI@3
+    inputs:
+      command: test
+      projects: $(Solution)
+      arguments: --configuration $(BuildConfiguration) --collect:"XPlat Code Coverage"
+      publishTestResults: true
+    displayName: Solution test
+
+  # Combine code coverage reports into one
+  - script: |
+      dotnet tool install -g dotnet-reportgenerator-globaltool --add-source 'https://api.nuget.org/v3/index.json' --ignore-failed-sources
+      reportgenerator -reports:$(Agent.TempDirectory)/**/coverage.cobertura.xml -targetdir:$(Build.SourcesDirectory)/CodeCoverage -reporttypes:'HtmlInline_AzurePipelines;Cobertura'
+    displayName: Create code coverage report
+
+  # Publishing the combined code coverage report to the pipeline
+  - task: PublishCodeCoverageResults@1
+    inputs:
+      codeCoverageTool: Cobertura
+      summaryFileLocation: $(Build.SourcesDirectory)/CodeCoverage/Cobertura.xml
+      reportDirectory: $(Build.SourcesDirectory)/CoverageResults
+    displayName: Publish code coverage report
