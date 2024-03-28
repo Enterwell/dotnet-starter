@@ -30,16 +30,16 @@ public class BooksController : BaseV1ApiController
     /// <summary>
     /// Gets all books paged asynchronously.
     /// </summary>
-    /// <param name="pagingDto">The paged request DTO.</param>
+    /// <param name="pagedRequestDto">The paged request dto.</param>
     /// <returns>
     /// Paged books.
     /// </returns>
-    [HttpPost("search")]
+    [HttpGet]
     [ProducesResponseType(typeof(PagedResponseDto<BookDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> GetAllAsync([FromBody] PagedRequestDto pagingDto) =>
-        this.Ok(await this.booksApiService.GetAllAsync(pagingDto));
+    public async Task<IActionResult> GetAllAsync([FromQuery] PagedRequestDto pagedRequestDto) =>
+        this.Ok(await this.booksApiService.GetAllAsync(pagedRequestDto));
 
     /// <summary>
     /// Gets the book by its identifier asynchronously.

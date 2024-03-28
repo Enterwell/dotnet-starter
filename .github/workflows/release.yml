@@ -1,0 +1,50 @@
+name: Release
+
+# Triggering the workflow on pushes to main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # Release job
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      # Bump version and update changelog
+      - name: Bump version and update changelog
+        id: version-bump
+        uses: Enterwell/ChangelogManager-GitHub-Action@v3
+        with:
+          should-bump-version: true
+          path-to-project-file: ./Acme.Interface.WebAPI/Acme.Interface.WebAPI.csproj
+
+      # Committing new changes
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9.1.1
+        with:
+          message: "[skip ci] [version-bump] Automated commit for version ${{ steps.version-bump.outputs.bumped-semantic-version }}"
+
+      # # Update Git tags - uncomment once you add your secrets and configs
+      # - name: Git tags update
+      #   run: |
+      #     git config user.name github-actions
+      #     git config user.email github-actions@github.com
+
+      #     git tag "v${{ steps.version-bump.outputs.bumped-semantic-version }}"
+      #     git tag -f "v${{ steps.version-bump.outputs.bumped-major-part }}" "v${{ steps.version-bump.outputs.bumped-semantic-version }}"
+      #     git tag -f "v${{ steps.version-bump.outputs.bumped-major-part }}.${{ steps.version-bump.outputs.bumped-minor-part }}" "v${{ steps.version-bump.outputs.bumped-semantic-version }}"
+
+      #     git push -f --tags
+
+      # # Creating latest release
+      # - name: Create GitHub release
+      #   run: gh release create "v${{ steps.version-bump.outputs.bumped-semantic-version }}" -n "${{ steps.version-bump.outputs.new-changes }}"
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
